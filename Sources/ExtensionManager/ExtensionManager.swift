@@ -98,10 +98,14 @@ public struct ExtensionManager: View {
                     // Execute initial activation/deactivation action
                     if activationEnabled {
                         handleActivate()
+                        return
                     } else if !activationEnabled && controller.activated {
                         handleDeactivate()
+                        return
                     }
                 }
+                
+                isDisabled = false
             }
         }
     }
